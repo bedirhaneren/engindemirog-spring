@@ -1,30 +1,26 @@
 package com.example.engindemirogspring.entities.concretes;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "brands")
+@Entity
+
 public class Brand {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id ;
-    private String brandName;
 
-    public int getId() {
-        return id;
-    }
+    @Column(name = "name")
+    private String name;
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public String getBrandName() {
-        return brandName;
-    }
-
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
-    }
-
-    public Brand() {
-    }
-
-    public Brand(int id, String brandName) {
-        this.id = id;
-        this.brandName = brandName;
-    }
 }
